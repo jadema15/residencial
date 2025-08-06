@@ -1,6 +1,5 @@
 package com.conjunto.conjunto.controller;
 
-import com.conjunto.conjunto.models.DTO.TipoDocumentoDTO;
 import com.conjunto.conjunto.models.TipoDocumentoEntity;
 import com.conjunto.conjunto.services.ITipoDocumentoService;
 import lombok.AllArgsConstructor;
