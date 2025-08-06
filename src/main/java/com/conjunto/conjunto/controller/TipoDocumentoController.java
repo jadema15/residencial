@@ -22,4 +22,9 @@ public class TipoDocumentoController {
     public Long getValidaNumero(){
         return 10L;
     }
+
+    @GetMapping("/valida-boolean")
+    public Boolean getValidaBoolean(){
+        return true;
+    }
 }
