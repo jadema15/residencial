@@ -25,7 +25,7 @@ public class TipoDocumentoController {
 
     @GetMapping("/valida-boolean")
     public Boolean getValidaBoolean(){
-        //jjjjjjjjjjjjj
+
         return true;
     }
 }
