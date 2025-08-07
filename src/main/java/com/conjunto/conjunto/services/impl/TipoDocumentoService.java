@@ -1,7 +1,7 @@
-package com.conjunto.conjunto.services.Impl;
+package com.conjunto.conjunto.services.impl;
 
+import com.conjunto.conjunto.mappers.TipoDocumentoMapper;
 import com.conjunto.conjunto.models.DTO.TipoDocumentoDTO;
-import com.conjunto.conjunto.models.TipoDocumentoEntity;
 import com.conjunto.conjunto.repository.TipoDocumentoRepository;
 import com.conjunto.conjunto.services.ITipoDocumentoService;
 import lombok.AllArgsConstructor;
@@ -16,7 +16,7 @@ public class TipoDocumentoService implements ITipoDocumentoService {
     private TipoDocumentoRepository tipoDocumentoRepository;
 
     @Override
-    public List<TipoDocumentoEntity> getTipoDocumentos() {
-        return tipoDocumentoRepository.findAll();
+    public List<TipoDocumentoDTO> getTipoDocumentos() {
+        return TipoDocumentoMapper.INSTANCE.listToDTO(tipoDocumentoRepository.findAll());
     }
 }

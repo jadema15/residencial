@@ -7,5 +7,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class TipoDocumentoDTO {
     private Long Id;
-    private String nombreTipoDocumento;
+    private String nombre;
 }

@@ -1,6 +1,6 @@
 package com.conjunto.conjunto.controller;
 
-import com.conjunto.conjunto.models.TipoDocumentoEntity;
+import com.conjunto.conjunto.models.DTO.TipoDocumentoDTO;
 import com.conjunto.conjunto.services.ITipoDocumentoService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class TipoDocumentoController implements ITipoDocumentoService {
     private ITipoDocumentoService tipoDocumentoService;
     @Override
     @GetMapping()
-    public List<TipoDocumentoEntity> getTipoDocumentos() {
+    public List<TipoDocumentoDTO> getTipoDocumentos() {
         return tipoDocumentoService.getTipoDocumentos();
     }
 }
