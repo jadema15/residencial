@@ -31,4 +31,10 @@ public class PersonaService implements IPersonaService {
         Optional<PersonaEntity> personaEntity = personaRepository.findById(id);
         return personaEntity.map(PersonaMapper.INSTANCE::toDTO).orElse(null);
     }
+
+    @Override
+    public PersonaDTO getPersonaByDocumento(String documento) {
+        Optional<PersonaEntity> personaEntity = personaRepository.findByDocumento(documento);
+        return personaEntity.map(PersonaMapper.INSTANCE::toDTO).orElse(null);
+    }
 }

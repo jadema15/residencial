@@ -16,6 +16,7 @@ import static org.mockito.Mockito.when;
 class PersonaServiceTest {
 
     private static Long NUMBER_ID = 1L;
+    private static String NUMERO_DOCUMENTO = "13072001";
 
     private PersonaRepository personaRepository;
     private PersonaService personaService;
@@ -82,6 +83,32 @@ class PersonaServiceTest {
         PersonaDTO result = personaService.getPersonaById(NUMBER_ID);
 
         // Assert
+        assertNull(result);
+    }
+
+    @Test
+    void testGetPersonaByDocumento_withResults(){
+        //Arrange
+        PersonaEntity persona = PersonaEntity.builder().primerApellido("delgado").primerNombre("jairo").documento("13072001").build();
+        when(personaRepository.findByDocumento(NUMERO_DOCUMENTO)).thenReturn(Optional.ofNullable(persona));
+
+        //Act
+        PersonaDTO result = personaService.getPersonaByDocumento(NUMERO_DOCUMENTO);
+
+        //Asserts
+        assertNotNull(result);
+        assertEquals(NUMERO_DOCUMENTO, result.getDocumento());
+    }
+
+    @Test
+    void testGetPersonaByDocumento_withOutResult(){
+        //Arrange
+        when(personaRepository.findByDocumento(NUMERO_DOCUMENTO)).thenReturn(Optional.empty());
+
+        //Act
+        PersonaDTO result = personaService.getPersonaByDocumento(NUMERO_DOCUMENTO);
+
+        //Asserts
         assertNull(result);
     }
 }

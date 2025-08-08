@@ -31,5 +31,5 @@ public class PersonaEntity {
     private Boolean status;
     @ManyToOne
     private TipoDocumentoEntity tipoDocumento;
-
+    private String documento;
 }

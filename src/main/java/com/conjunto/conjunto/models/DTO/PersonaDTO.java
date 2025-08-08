@@ -21,4 +21,5 @@ public class PersonaDTO {
     private Blob foto;
     private Date fechaRegistro;
     private Boolean status;
+    private String documento;
 }

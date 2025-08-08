@@ -7,4 +7,5 @@ import java.util.List;
 public interface IPersonaService {
     List<PersonaDTO> getPersonaAll();
     PersonaDTO getPersonaById(Long id);
+    PersonaDTO getPersonaByDocumento(String documento);
 }

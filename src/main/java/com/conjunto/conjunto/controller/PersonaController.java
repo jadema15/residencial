@@ -3,10 +3,7 @@ package com.conjunto.conjunto.controller;
 import com.conjunto.conjunto.models.DTO.PersonaDTO;
 import com.conjunto.conjunto.services.IPersonaService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +24,11 @@ public class PersonaController implements IPersonaService {
     @GetMapping("/by-id")
     public PersonaDTO getPersonaById(@RequestParam Long id) {
         return personaService.getPersonaById(id);
+    }
+
+    @Override
+    @GetMapping("/by-documento/{documento}")
+    public PersonaDTO getPersonaByDocumento(@PathVariable  String documento) {
+        return personaService.getPersonaByDocumento(documento);
     }
 }
