@@ -1,10 +1,7 @@
 package com.conjunto.conjunto.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.sql.Blob;
 import java.util.Date;
@@ -14,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name = "persona")
 public class PersonaEntity {
 
@@ -33,4 +31,5 @@ public class PersonaEntity {
     private Boolean status;
     @ManyToOne
     private TipoDocumentoEntity tipoDocumento;
+
 }
