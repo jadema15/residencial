@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ITipoDocumentoService {
     List<TipoDocumentoDTO> getTipoDocumentos();
+    TipoDocumentoDTO getTipoDocumentoById(Long id);
 }
